@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-cliente.page.scss'],
 })
 export class AddClientePage implements OnInit {
+/* variaveis declarada
+  id: string="";
+  nome: string="";
+  cpf: string="";
+  email: string="";
+  telefone: string="";
+  ativo: string="";
+  senha: string="";*/
 
   constructor() { }
 
   ngOnInit() {
   }
+  /*Cadastrar( ){}
+
+  Cancelar( ){}*/
 
 }

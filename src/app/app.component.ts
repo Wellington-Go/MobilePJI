@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: 'servicos', icon: 'home' },
-    { title: 'Cadastro', url: 'add-cliente', icon: 'people' },
+    { title: 'Home', url: 'login', icon: 'home' },
+    { title: 'Sobre', url: 'folder', icon: 'information-circle' },
   ];
   public labels = ['Ionic', 'Angular', 'PHP','API'];
   constructor() {}

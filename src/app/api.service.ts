@@ -1,6 +1,6 @@
 import { HttpClient } from 'selenium-webdriver/http';
 import { Injectable } from '@angular/core';
-import * as internal from 'stream';
+
 
 /*export interface Cliente{
   id: string;
