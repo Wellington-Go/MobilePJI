@@ -7,12 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
-  public folder: string;
+  public cards = [   {img : 'img1.png',  sub: ' viagens',  tit:'cidade',
+  cont:'No mês de julho de 2019 visitamos a ilha. Depos de 985 km de estrada.'}];
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
 }

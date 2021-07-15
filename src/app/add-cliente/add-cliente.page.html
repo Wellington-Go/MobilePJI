@@ -1,9 +1,49 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>Cadastro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="primary">
+  <ion-item color="medium">
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input placeholder="Digite seu nome" type="text">  </ion-input>
+  </ion-item>
 
+  <ion-item color="medium">
+    <ion-label position="floating">CPF</ion-label>
+    <ion-input placeholder="Digite seu CPF" type="number">  </ion-input>
+  </ion-item>
+
+  <ion-item color="medium">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input placeholder="Digite seu email" type="email"> </ion-input>
+  </ion-item>
+
+  <ion-item color="medium">
+    <ion-label position="floating">Telefone</ion-label>
+    <ion-input placeholder="Digite seu Telefone" type="number">  </ion-input>
+  </ion-item>
+
+  <ion-item color="medium">
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input placeholder="Digite sua senha" type="password">  </ion-input>
+  </ion-item>
+
+  <ion-item color="medium">
+    <ion-label position="stacked">Endereco</ion-label>
+    <ion-input placeholder="Cep"></ion-input>
+    <ion-input placeholder="Logradouro"></ion-input>
+    <ion-input placeholder="Numero"></ion-input>
+    <ion-input placeholder="Complemento"></ion-input>
+    <ion-input placeholder="Tipo"></ion-input>
+    <ion-input placeholder="Cidade"></ion-input>
+    <ion-input placeholder="Bairro"></ion-input>
+    <ion-input placeholder="Uf"></ion-input>
+  </ion-item>
+  <ion-button color="success" expand="block" size="large" href="/login" >Finalizar</ion-button>
+  <ion-button  expand="block" size="large" href="/login"> Cancelar </ion-button>
 </ion-content>
