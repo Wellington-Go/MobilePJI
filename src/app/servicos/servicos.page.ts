@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { PostService } from 'src/services/post.service';
+
+/*
+Modificado: 16/7/21
+autor: Wellington
+horario: 18H / 00H
+*/
+
 
 @Component({
   selector: 'app-servicos',
@@ -8,32 +16,20 @@ import { PostService } from 'src/services/post.service';
   styleUrls: ['./servicos.page.scss'],
 })
 export class ServicosPage implements OnInit {
-id: string="";
-descricao: string="";
-data: string="";
-valor: string="";
-  constructor(private service:PostService, private router: Router) { }
+
+  constructor(private service: PostService) { }
 
   ngOnInit() {
   }
 
-  cadastrar(){
-    return new Promise(resolve => {
-      let dados = {
-        requisicao :'chamado',
-        descricao: this.descricao,
-        data:this.data,
-        valor:this.valor
-     
-      };
-      this.service.dadosApi(dados,'api.php').subscribe(data =>{
-        if (data['success']){
-         this.router.navigate(['usuarios']);
-         console.log(data);
-         this.id="";this.descricao="",this.data="";this.valor="";
-        }
-      });
-    });
-    }//final do méto
+  enviando(form: NgForm){
+
+    //console.log(form.value);
+
+    const servico = form.value;
+    this.service.create(servico);
+    }
+  //Final do Método Criar Serviços
+
 
 }
