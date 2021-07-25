@@ -5,17 +5,15 @@
 </ion-header>
 
 <ion-content color="primary">
-  <form #f="ngForm" (ngSubmit)="enviando(f)">
   <ion-item color="medium">
     <ion-label position="floating">Descricao</ion-label>
-    <ion-textarea ngModel name="descricao" id="descricao" placeholder="Digite sua necessidade"></ion-textarea>
+    <ion-textarea  [(ngModel)]="descricao" id="descricao" placeholder="Digite sua necessidade"></ion-textarea>
   </ion-item>
-  <ion-item color="medium">
+  <!--<ion-item color="medium">
     <ion-label position="floating">Data</ion-label>
     <ion-input ngModel name="data" id="data" type="text" placeholder="Digite a data"></ion-input>
-  </ion-item>
-  <ion-button type="submit" color="success" expand="block" >Enviar</ion-button>
-</form>
+  </ion-item>-->
+  <ion-button color="success" expand="block" (click)="enviar()">Enviar</ion-button>
   
   <ion-button type="submit" expand="block" color="danger">Cancelar</ion-button>
 </ion-content>

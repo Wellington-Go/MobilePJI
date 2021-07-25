@@ -1,4 +1,4 @@
-import { PostService } from './../services/post.service';
+import { PostService } from '../Service/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
