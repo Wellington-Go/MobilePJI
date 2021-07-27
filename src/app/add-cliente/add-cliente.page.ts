@@ -1,4 +1,6 @@
+import { PostService } from './../../Service/post.service';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-cliente',
@@ -8,12 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class AddClientePage implements OnInit {
 
 
-  constructor() { }
+  constructor(private servico: PostService) { }
 
   ngOnInit() {
   }
-  /*Cadastrar( ){}
 
-  Cancelar( ){}*/
+
+  /*enviando(form: NgForm){
+    const cliente = form.value;
+    this.servico.create(cliente).subscribe(res=>{
+      console.log(res);
+    });
+  }*/
 
 }

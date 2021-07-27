@@ -6,13 +6,13 @@
 
 <ion-content color="primary">
   <ion-item color="medium">
-    <ion-label position="floating">Descricao</ion-label>
-    <ion-textarea  [(ngModel)]="descricao" id="descricao" placeholder="Digite sua necessidade"></ion-textarea>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-textarea  [(ngModel)]="nome" id="nome" placeholder="Digite sua necessidade"></ion-textarea>
   </ion-item>
-  <!--<ion-item color="medium">
-    <ion-label position="floating">Data</ion-label>
-    <ion-input ngModel name="data" id="data" type="text" placeholder="Digite a data"></ion-input>
-  </ion-item>-->
+  <ion-item color="medium">
+    <ion-label position="floating">Valor</ion-label>
+    <ion-input [(ngModel)]="valor" id="valor" type="text" placeholder="Digite a data"></ion-input>
+  </ion-item>
   <ion-button color="success" expand="block" (click)="enviar()">Enviar</ion-button>
   
   <ion-button type="submit" expand="block" color="danger">Cancelar</ion-button>

@@ -1,29 +1,26 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-// Dados do Banco
-export interface Cliente{
-  id: string;
-  nome: string;
-  cpf: string;
-  email: string;
-  telefone: string;
-  ativo: string;
-  senha: string;
-
-}
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-private serve='http://localhost/api';
+  headers: HttpHeaders;
 
-  constructor(private http: HttpClient) {}
+  constructor(public http: HttpClient) {
+    this.headers = new HttpHeaders();
+    this.headers.append('Accept', 'application/json');
+    this.headers.append('Content-Type','application/json');
+    this.headers.append('Access-Control-Allow-Origin', '*');
+  }
 
-  getAll(cpf: any, senha: any){
-    return this.http.get(this.serve +'/' + cpf + '/' + senha);
+  create(data){
+    return this.http.post('http://localhost/phpapi/backend/create.php',data);
+  }
+  login(cpf,senha){
+    return this.http.get('http://localhost/phpapi/backend/login.php?cpf='+cpf+'senha='+senha);
   }
 
 }

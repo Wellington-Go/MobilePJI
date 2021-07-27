@@ -14,25 +14,24 @@ horario: 18H / 00H
   styleUrls: ['./servicos.page.scss'],
 })
 export class ServicosPage implements OnInit {
-descricao='';
+nome: any;
+valor: any;
 
-  constructor(private service: PostService) { }
+  constructor(public service: PostService) { }
 
-  ngOnInit() {
+ngOnInit() {
   }
-  enviar(){
-  /*return new Promise(resolve => {
-    const dados = {
-      requisicao :'add',
-      descricao: this.descricao
-    };
-    this.service.dadosApi(dados,'api.php').subscribe(data =>{
-      if (data.success){
-       console.log(data);
-       this.descricao='';
-      }
-    });
-  });*/
+enviar(){
+const data = {
+  nome: this.nome,
+  valor: this.valor,
+};
+this.service.create(data).subscribe((res: any)=>{
+  console.log('SUCCESS ===',res);
+},(error: any)=>{
+  console.log('ERROR ===',error);
+});
+
 }//final do método cadastrar()
 
 

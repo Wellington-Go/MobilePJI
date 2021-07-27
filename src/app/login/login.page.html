@@ -13,15 +13,15 @@
 
   <ion-item color="dark">
     <ion-label position="floating">CPF</ion-label>
-    <ion-input  [(ngModel)]="cpf" placeholder="Digite o cpf"></ion-input>
+    <ion-input  [(ngModel)]="cpf" placeholder="Digite o cpf" maxlength="11" required></ion-input>
   </ion-item>
 
   <ion-item color="dark">
     <ion-label position="floating">SENHA</ion-label>
-    <ion-input  [(ngModel)]="senha" placeholder="Digite a senha" type="password"></ion-input>
+    <ion-input  [(ngModel)]="senha" placeholder="Digite a senha" type="password" maxlength="8" required></ion-input>
   </ion-item>
 
-  <ion-button (click)="logar()" color="secondary" expand="block">
+  <ion-button  (click)="logar()"  color="secondary" expand="block">
     Login
   </ion-button>
   <ion-button color="secondary" expand="block">
