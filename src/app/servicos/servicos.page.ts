@@ -21,7 +21,7 @@ valor: any;
 
 ngOnInit() {
   }
-enviar(){
+enviar(){/*
 const data = {
   nome: this.nome,
   valor: this.valor,
@@ -30,7 +30,7 @@ this.service.create(data).subscribe((res: any)=>{
   console.log('SUCCESS ===',res);
 },(error: any)=>{
   console.log('ERROR ===',error);
-});
+});*/
 
 }//final do método cadastrar()
 

@@ -20,7 +20,7 @@ export class PostService {
     return this.http.post('http://localhost/phpapi/backend/create.php',data);
   }
   login(cpf,senha){
-    return this.http.get('http://localhost/phpapi/backend/login.php?cpf='+cpf+'senha='+senha);
+    return this.http.get('http://localhost/phpapi/backend/login.php?cpf='+cpf+'&senha='+senha);
   }
 
 }

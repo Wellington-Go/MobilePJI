@@ -1,9 +1,8 @@
 
 import { PostService } from 'src/Service/post.service';
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { ServicosPage } from '../servicos/servicos.page';
-import { AddClientePage } from '../add-cliente/add-cliente.page';
+import { Router } from '@angular/router';
+
 
 
 
@@ -16,7 +15,7 @@ export class LoginPage implements OnInit {
 cpf: any;
 senha: any;
 
-  constructor(public service: PostService, private modalCtrl: ModalController) { }
+  constructor(public service: PostService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,16 +25,10 @@ logar(){
    },(err: any)=>{
       console.log('erro',err);
    });
-  this.modalCtrl.create({
-        component: ServicosPage
-      }).then(modal => modal.present());
-
 
 }
-  cadastro(){
-    this.modalCtrl.create({
-      component: AddClientePage
-    }).then(modal => modal.present());
-  }
+cadastro(){
+    this.router.navigate(['add-cliente']);
+}
 
 }

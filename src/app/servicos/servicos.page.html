@@ -1,19 +1,24 @@
 <ion-header>
   <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title class="titulo">Servicos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="primary">
-  <ion-item color="medium">
+  
+  <ion-item color="secondary">
     <ion-label position="floating">Nome</ion-label>
     <ion-textarea  [(ngModel)]="nome" id="nome" placeholder="Digite sua necessidade"></ion-textarea>
   </ion-item>
-  <ion-item color="medium">
+  <ion-item color="secondary">
     <ion-label position="floating">Valor</ion-label>
     <ion-input [(ngModel)]="valor" id="valor" type="text" placeholder="Digite a data"></ion-input>
   </ion-item>
+
   <ion-button color="success" expand="block" (click)="enviar()">Enviar</ion-button>
-  
   <ion-button type="submit" expand="block" color="danger">Cancelar</ion-button>
+
 </ion-content>

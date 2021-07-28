@@ -8,7 +8,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-cliente.page.scss'],
 })
 export class AddClientePage implements OnInit {
-
+nome: any;
+cpf: any;
+email: any;
+telefone: any;
+senha: any;
+// variavel da segunda tabela
+cep: any;
+logradouro: any;
+numero: any;
+complemento: any;
+tipo: any;
+cidade: any;
+bairro: any;
+uf: any;
 
   constructor(private servico: PostService) { }
 
@@ -16,11 +29,28 @@ export class AddClientePage implements OnInit {
   }
 
 
-  /*enviando(form: NgForm){
-    const cliente = form.value;
-    this.servico.create(cliente).subscribe(res=>{
-      console.log(res);
-    });
-  }*/
+add(){
+  const data = {
+    nome: this.nome,
+    cpf: this.cpf,
+    email: this.email,
+    telefone: this.telefone,
+    senha: this.senha,
+    cep: this.cep,
+    logradouro:this.logradouro,
+    numero: this.numero,
+    complemento: this.complemento,
+    tipo: this.tipo,
+    cidade: this.cidade,
+    bairro: this.bairro,
+    uf: this.uf,
+
+  };
+  this.servico.create(data).subscribe((res: any)=>{
+    console.log('SUCCESS ===',res);
+  },(error: any)=>{
+    console.log('ERROR ===',error);
+  });
+}
 
 }

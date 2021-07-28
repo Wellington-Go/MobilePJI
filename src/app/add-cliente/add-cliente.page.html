@@ -9,48 +9,42 @@
 
 <ion-content color="primary">
 
-  <form>
-
   <ion-item color="medium">
     <ion-label position="floating">Nome</ion-label>
-    <ion-input ngModel name="nome" placeholder="Digite seu nome" type="text">  </ion-input>
+    <ion-input [(ngModel)]="nome" placeholder="Digite seu nome" type="text">  </ion-input>
   </ion-item>
 
   <ion-item color="medium">
     <ion-label position="floating">CPF</ion-label>
-    <ion-input ngModel name="cpf" placeholder="Digite seu CPF" type="number">  </ion-input>
+    <ion-input [(ngModel)]="cpf" placeholder="Digite seu CPF" type="number">  </ion-input>
   </ion-item>
 
   <ion-item color="medium">
     <ion-label position="floating">Email</ion-label>
-    <ion-input ngModel name="email" placeholder="Digite seu email" type="email"> </ion-input>
+    <ion-input [(ngModel)]="email" placeholder="Digite seu email" type="email"> </ion-input>
   </ion-item>
 
   <ion-item color="medium">
     <ion-label position="floating">Telefone</ion-label>
-    <ion-input ngModel name="telefone" placeholder="Digite seu Telefone" type="number">  </ion-input>
+    <ion-input [(ngModel)]="telefone" placeholder="Digite seu Telefone" type="number">  </ion-input>
   </ion-item>
 
   <ion-item color="medium">
     <ion-label position="floating">Senha</ion-label>
-    <ion-input ngModel name="senha" placeholder="Digite sua senha" type="password">  </ion-input>
+    <ion-input [(ngModel)]="senha" placeholder="Digite sua senha" type="password">  </ion-input>
   </ion-item>
 
- <ion-button type="submit" color="success" expand="block" size="large">Add</ion-button>
- 
-</form>
-
-  <!--<ion-item color="medium">
+  <ion-item color="medium">
     <ion-label position="stacked">Endereco</ion-label>
-    <ion-input placeholder="Cep"></ion-input>
-    <ion-input placeholder="Logradouro"></ion-input>
-    <ion-input placeholder="Numero"></ion-input>
-    <ion-input placeholder="Complemento"></ion-input>
-    <ion-input placeholder="Tipo"></ion-input>
-    <ion-input placeholder="Cidade"></ion-input>
-    <ion-input placeholder="Bairro"></ion-input>
-    <ion-input placeholder="Uf"></ion-input>
-  </ion-item>-->
- 
-  <ion-button  expand="block" size="large" href="/login"> Cancelar </ion-button>
+    <ion-input [(ngModel)]="cep" placeholder="Cep"></ion-input>
+    <ion-input [(ngModel)]="logradouro" placeholder="Logradouro"></ion-input>
+    <ion-input [(ngModel)]="numero" placeholder="Numero"></ion-input>
+    <ion-input [(ngModel)]="complemento" placeholder="Complemento"></ion-input>
+    <ion-input [(ngModel)]="tipo" placeholder="Tipo"></ion-input>
+    <ion-input [(ngModel)]="cidade" placeholder="Cidade"></ion-input>
+    <ion-input [(ngModel)]="bairro" placeholder="Bairro"></ion-input>
+    <ion-input [(ngModel)]="uf" placeholder="Uf"></ion-input>
+  </ion-item>
+  <ion-button (click)="add()" type="submit" color="success" expand="block" size="large">Add</ion-button>
+
 </ion-content>
