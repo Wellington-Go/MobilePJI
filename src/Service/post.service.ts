@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
+/* componentes para conectar api com ionic
+  estar disponivel no youtube a api https://www.youtube.com/watch?v=bqiHfIBh8Xk
+*/
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,14 @@ export class PostService {
   create(data){
     return this.http.post('http://localhost/phpapi/backend/create.php',data);
   }
-  login(cpf,senha){
-    return this.http.get('http://localhost/phpapi/backend/login.php?cpf='+cpf+'&senha='+senha);
+  listar(){
+    return this.http.get('http://localhost/phpapi/backend/listar.php');
+  }
+  buscar(id){
+    return this.http.get('http://localhost/phpapi/backend/buscar.php?id='+id);
+  }
+  atualizar(id,data){
+    return this.http.put('http://localhost/phpapi/backend/atualizar.php?id='+id,data);
   }
 
 }

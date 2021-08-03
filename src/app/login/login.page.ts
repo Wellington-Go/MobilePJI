@@ -12,23 +12,51 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-cpf: any;
-senha: any;
+nome: any;
+email: any;
+sugestoes: any;
+dicas: any = [];
 
-  constructor(public service: PostService, private router: Router) { }
+  constructor(public service: PostService, private router: Router) { this.listar();}
 
   ngOnInit() {
   }
-logar(){
-      this.service.login(this.cpf,this.senha).subscribe((res: any)=>{
-            console.log('SUCCESS',res);
+
+add(){
+    const data = {
+      nome: this.nome,
+      email: this.email,
+      sugestoes: this.sugestoes,
+    };
+      this.service.create(data).subscribe((res: any)=>{
+        const result = res.dados;
+        if(result){
+          localStorage.setItem('dados', JSON.stringify(res.dados));
+          console.log('SUCCESS',res);
+          this.nome = '';
+          this.email = '';
+          this.sugestoes = '';
+          alert('SUCCESS');
+        }
+        this.router.navigate(['login']);
    },(err: any)=>{
       console.log('erro',err);
+      alert('ERRO!');
    });
 
-}
-cadastro(){
-    this.router.navigate(['add-cliente']);
-}
+}// final do create
+
+listar(){
+  this.service.listar().subscribe((res: any)=>{
+    console.log('SUCCESS',res);
+    this.dicas = res;
+},(err: any)=>{
+  console.log('erro',err);
+  alert('ERRO!');
+});
+
+}//final do listar
+
+
 
 }

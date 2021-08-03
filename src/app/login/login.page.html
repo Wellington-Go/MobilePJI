@@ -1,28 +1,54 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="titulo">Login</ion-title>
+    <ion-title class="titulo">Avaliação</ion-title>
   </ion-toolbar>
  
 </ion-header>
 
-<ion-content color="primary">
-    <img src="../../assets/user.png" />
-
-  <ion-item color="secondary">
-    <ion-label position="floating">CPF</ion-label>
-    <ion-input  [(ngModel)]="cpf" placeholder="Digite o cpf" maxlength="11" required></ion-input>
+<ion-content color="dark">
+  <ion-list color="dark">
+  <ion-item color="contrast">
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input  [(ngModel)]="nome" placeholder="Digite seu Nome" required></ion-input>
   </ion-item>
 
-  <ion-item color="secondary">
-    <ion-label position="floating">SENHA</ion-label>
-    <ion-input  [(ngModel)]="senha" placeholder="Digite a senha" type="password" maxlength="8" required></ion-input>
+  <ion-item color="contrast">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input  [(ngModel)]="email" placeholder="Digite seu Email" type="email" email required></ion-input>
   </ion-item>
 
-  <ion-button (click)="logar()"  color="secondary" expand="block" color="medium">Login</ion-button>
+  <ion-item color="contrast">
+    <ion-label position="floating">Sugestões</ion-label>
+    <ion-textarea [(ngModel)]="sugestoes" rows="6"></ion-textarea>
+  </ion-item>
 
-  <ion-button (click)="cadastro()" color="secondary" expand="block" color="medium">Cadastrar</ion-button>
+  <ion-row>
+    <ion-col>
+    <ion-button (click)="add()"  color="secondary" expand="block" color="primary">Enviar</ion-button>
+    </ion-col>
+  </ion-row>
+
+ </ion-list>
+
+  <ion-list color="dark" class="listagem" >
+
+  <ion-list-header color="dark">Lista</ion-list-header >
+
+  <ion-item color="primary" lines="insert" *ngFor="let item of dicas" >
+    <ion-label color="dark">
+      <h5>{{item.nome}} {{item.email}}</h5>
+    </ion-label>
+    <div color="dark">
+      <ion-icon color="dark" name="create" style="zoom: 2.0;" [routerLink]="['/usuario/',item.id]"></ion-icon>
+    </div>
+  </ion-item>
+
+ </ion-list>
+
   
 </ion-content>
+
+ 

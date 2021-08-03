@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulo">Mostrar-usuarios</ion-title>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+<ion-list lines="full">
+
+  <ion-item color="dark">
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="nome" type="text" placeholder="Digite seu nome"></ion-input>
+  </ion-item>
+
+  <ion-item color="dark">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="email" placeholder="Awesome Input"></ion-input>
+  </ion-item>
+
+  <ion-item color="dark">
+    <ion-label position="floating">Sugestões</ion-label>
+    <ion-textarea [(ngModel)]="sugestoes" rows="6"></ion-textarea>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" type="button" (click)="update()" expand="block" shape="round">
+        Atualizar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-list>
+</ion-content>
